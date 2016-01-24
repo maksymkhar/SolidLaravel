@@ -6,6 +6,8 @@
  * Time: 17:04
  */
 
+namespace App\Transformers;
+
 abstract class Transformer
 {
     public function transformCollection(array $items)

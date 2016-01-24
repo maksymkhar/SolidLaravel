@@ -6,6 +6,8 @@
  * Time: 17:03
  */
 
+namespace App\Transformers;
+
 class InvoicesTransformer extends Transformer
 {
     public function transform($database_invoices)

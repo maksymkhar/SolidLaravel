@@ -2,26 +2,54 @@
 /**
  * Created by PhpStorm.
  * User: max
- * Date: 24/01/16
- * Time: 17:00
+ * Date: 25/01/16
+ * Time: 16:19
  */
 
 namespace App\Repositories;
-use App\Invoices;
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+use Mockery\CountValidator\Exception;
 
 /**
- * Class InvoiceRepository
+ * Class UserRepository
  * @package App\Repositories
  */
-class InvoiceRepository implements RepositoryInterface
+abstract class Repository implements RepositoryInterface
 {
+
+    protected $model;
+
     /**
+     * UserRepository constructor.
+     * @param $model
+     */
+    public function __construct()
+    {
+        $this->model = $this->makeModel();
+    }
+
+
+    abstract function model();
+
+    public function makeModel()
+    {
+        $model = App::make($this->model());
+
+        if (!$model instanceof Model) { throw new Exception; }
+
+        return $model;
+    }
+
+    /**
+     * @param array $columns
      * @return mixed
      */
     public function all()
     {
-        return Invoices::all();
+        return $this->model::all();
     }
+
     /**
      * @param int $perPage
      * @param array $columns
@@ -31,6 +59,7 @@ class InvoiceRepository implements RepositoryInterface
     {
         // TODO: Implement paginate() method.
     }
+
     /**
      * @param array $data
      * @return mixed
@@ -39,6 +68,7 @@ class InvoiceRepository implements RepositoryInterface
     {
         // TODO: Implement create() method.
     }
+
     /**
      * @param array $data
      * @param $id
@@ -48,6 +78,7 @@ class InvoiceRepository implements RepositoryInterface
     {
         // TODO: Implement update() method.
     }
+
     /**
      * @param $id
      * @return mixed
@@ -56,6 +87,7 @@ class InvoiceRepository implements RepositoryInterface
     {
         // TODO: Implement delete() method.
     }
+
     /**
      * @param $id
      * @param array $columns
@@ -65,6 +97,7 @@ class InvoiceRepository implements RepositoryInterface
     {
         // TODO: Implement find() method.
     }
+
     /**
      * @param $field
      * @param $value

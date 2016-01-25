@@ -7,13 +7,14 @@
  */
 
 namespace App\Repositories;
-
-
 use App\User;
 
+/**
+ * Class UserRepository
+ * @package App\Repositories
+ */
 class UserRepository implements RepositoryInterface
 {
-
     /**
      * @param array $columns
      * @return mixed

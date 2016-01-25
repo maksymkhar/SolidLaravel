@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\InvoiceRepository;
 
 use App\Http\Requests;
+use App\Repositories\RepositoryInterface;
 use App\Transformers\InvoicesTransformer;
 
 class InvoicesController extends Controller
@@ -18,7 +19,7 @@ class InvoicesController extends Controller
      * InvoicesController constructor.
      * @param $repo
      */
-    public function __construct(InvoiceRepository $repo, InvoicesTransformer $invoicesTransform)
+    public function __construct(RepositoryInterface $repo, InvoicesTransformer $invoicesTransform)
     {
         $this->invoicesTransform = $invoicesTransform;
         $this->repo = $repo;

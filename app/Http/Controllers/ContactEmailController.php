@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Flash;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,9 +14,15 @@ class ContactEmailController extends Controller
     {
         // FLASH NOTIFICATION
         $request->session()->flash(
-            'notification',
+            'flash_message',
             'All okk!!'
         );
+//
+//        Flash::message("Okk!!");
+
+        //$flash = app('\App\Http\Flash');
+
+        //$flash->message("WOLOLO");
 
 
 

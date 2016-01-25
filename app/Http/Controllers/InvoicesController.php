@@ -29,8 +29,8 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        $invoices = $this->invoicesTransform->transform(
-            $this->repo->all());
+        $invoices = $this->invoicesTransform->transform($this->repo->all());
+
         return view('invoices',compact('invoices'));
     }
 }

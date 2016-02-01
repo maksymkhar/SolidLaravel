@@ -28,6 +28,7 @@ class SendSubscriptionEmail extends Job implements ShouldQueue
      */
     public function handle()
     {
+        throw \Exception();
         sleep(5);
     }
 }

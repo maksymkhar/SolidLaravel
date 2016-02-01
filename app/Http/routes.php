@@ -57,4 +57,6 @@ Route::group(['middleware' => ['web', 'pjax']], function () {
     });
 });
 
+include "test-routes.php";
+
 //Route::post('sendContactEmail', 'ContactEmailController@send');

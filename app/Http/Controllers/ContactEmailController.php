@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Flash;
+use App\Jobs\SendSubscriptionEmail;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,6 +13,10 @@ class ContactEmailController extends Controller
 {
     public function send(Request $request)
     {
+
+        $this->sendEmail();
+
+
         // FLASH NOTIFICATION
         $request->session()->flash(
             'flash_message',
@@ -29,5 +34,12 @@ class ContactEmailController extends Controller
         //echo "lorem";
         // TODO: SEND EMAIL
         return redirect()->route('welcome');
+    }
+
+    public function sendEmail()
+    {
+        $this->dispatch(new SendSubscriptionEmail());
+
+        return "Jolo Compolo!";
     }
 }

@@ -28,6 +28,6 @@ class SendSubscriptionEmail extends Job implements ShouldQueue
      */
     public function handle()
     {
-        sleep(20);
+        sleep(5);
     }
 }

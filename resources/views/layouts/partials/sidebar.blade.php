@@ -39,11 +39,10 @@
             <li><a href="apartat2">Apartat 2</a></li>
             <li><a href="apartat3">Apartat 3</a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-link'></i> <span>Pricing plans</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="apartat1">Apartat 1</a></li>
-                    <li><a href="apartat2">Apartat 2</a></li>
-                    <li><a href="apartat3">Apartat 3</a></li>
+                    <li><a href="pricing_plan_1">Pricing plan 1</a></li>
+                    <li><a href="pricing_plan_2">Pricing plan 2</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

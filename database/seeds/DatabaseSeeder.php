@@ -1,6 +1,7 @@
 <?php
 
 use App\Invoices;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
 
         $faker = Faker\Factory::create();
         $this->seedInvoices($faker);
+        $this->seedUserTable();
     }
 
 
@@ -28,6 +30,16 @@ class DatabaseSeeder extends Seeder
             $invoice->totalAmmount = $faker->randomNumber;
             $invoice->save();
         }
+    }
+
+    private function seedUserTable()
+    {
+        $user = new User();
+        $user->name = 'Admin';
+        $user->email = 'admin@mail.com';
+        $user->password =  bcrypt(env('PASSWORD_ADMIN', '1234'));
+
+        $user->save();
     }
 
 }

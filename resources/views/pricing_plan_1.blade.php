@@ -4,120 +4,118 @@
     Apartat 1
 @endsection
 
-<style>
 
-    .container{
-        display: flex;
-        display: -webkit-flex;
-        flex-flow: row wrap;
-        -webkit-flex-flow: row wrap;
-    }
 
-    .columna1,
-    .columna2,
-    .columna3,
-    .columna4 {
-        width: 100%;
-    }
+@section('main-content')
 
-    @media (min-width: 600px) {
+    <style>
 
-        .columna1,
-        .columna2 {
-            width: 50%;
+        .pricing-container{
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row wrap;
+            -webkit-flex-flow: row wrap;
         }
-        .columna3,
-        .columna4 {
-            width: 50%;
-        }
-    }
-    @media (min-width: 800px) {
+
         .columna1,
         .columna2,
         .columna3,
         .columna4 {
-            width: 25%;
+            width: 100%;
         }
-        .container{
-            width: 800px;
-            margin-right: auto;
-            margin-left: auto;
+
+        @media (min-width: 600px) {
+
+            .columna1,
+            .columna2 {
+                width: 50%;
+            }
+            .columna3,
+            .columna4 {
+                width: 50%;
+            }
         }
-    }
+        @media (min-width: 800px) {
+            .columna1,
+            .columna2,
+            .columna3,
+            .columna4 {
+                width: 25%;
+            }
+            .container{
+                width: 800px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 10px;
+            margin: 10px;
+            border: black solid 1px;
+            border-radius: 25px;
+
+        }
+
+        .card-header {
+            text-align: center;
+            border: black solid 1px;
+            border-radius: 25px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .bck-red {
+            background: red;
+        }
+
+        .bck-blue {
+            background: blue;
+        }
+
+        .bck-orange {
+            background: orange;
+        }
+
+        .bck-green {
+            background: green;
+        }
 
 
+        .card-body {
+            margin: 10px;
+        }
 
+        .card-footer {
+            text-align: center;
+            border: black solid 1px;
+            border-radius: 25px;
+            color: white;
 
+        }
 
-    .pricing-card {
-        background: white;
-        padding: 10px;
-        margin: 10px;
-        border: black solid 1px;
-        border-radius: 25px;
+        .pricing-link {
+            color: white;
+            font-weight: bold;
+        }
 
-    }
+        ul.pricing-list {
+            list-style-image: url("/img/tick.gif");
+        }
 
-    .card-header {
-        text-align: center;
-        border: black solid 1px;
-        border-radius: 25px;
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-    }
+        li.not-avaliable {
+            list-style-image: url("/img/no_tick.gif");
+        }
 
-    .bck-red {
-        background: red;
-    }
+        .price {
+            font-size: 15px;
+        }
 
-    .bck-blue {
-        background: blue;
-    }
+    </style>
 
-    .bck-orange {
-        background: orange;
-    }
-
-    .bck-green {
-        background: green;
-    }
-
-
-    .card-body {
-        margin: 10px;
-    }
-
-    .card-footer {
-        text-align: center;
-        border: black solid 1px;
-        border-radius: 25px;
-        color: white;
-
-    }
-
-    .pricing-link {
-        color: white;
-        font-weight: bold;
-    }
-
-    ul.pricing-list {
-        list-style-image: url("/img/tick.gif");
-    }
-
-    li.not-avaliable {
-        list-style-image: url("/img/no_tick.gif");
-    }
-
-    .price {
-        font-size: 15px;
-    }
-
-</style>
-
-@section('main-content')
-
-    <div class="container">
+    <div class="pricing-container">
         <section class="columna1">
 
             <div class="pricing-card">
